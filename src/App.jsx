@@ -198,7 +198,7 @@ export default function App()
       return
     }
 
-    fetch("http://127.0.0.1:8000/start_game",{
+    fetch("https://mp-frontend-tfc6.onrender.com/start_game",{
       method:"POST",
       headers:{
         "Content-Type":"application/json"
@@ -226,7 +226,7 @@ export default function App()
   }
 
   function rollDice(){
-    fetch(`http://127.0.0.1:8000/turn/${game_id}`,{
+    fetch(`https://mp-frontend-tfc6.onrender.com/turn/${game_id}`,{
       method:"GET",
       headers:{
         "Content-Type":"application/json"
