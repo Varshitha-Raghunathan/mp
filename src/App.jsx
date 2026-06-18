@@ -261,7 +261,7 @@ export default function App()
       alert("You are not in jail hence do not press the button")
       return;
     }
-    fetch(`http://127.0.0.1:8000/jail_time_skip/${game_id}`,{
+    fetch(`https://mp-frontend-tfc6.onrender.com/jail_time_skip/${game_id}`,{
       method:"POST",
       headers:{
         "Content-Type":"application/json"
@@ -282,7 +282,7 @@ export default function App()
       alert("You are not in jail hence do not press the button")
       return;
     }
-    fetch(`http://127.0.0.1:8000/jail_time_pay/${game_id}`,{
+    fetch(`https://mp-frontend-tfc6.onrender.com/jail_time_pay/${game_id}`,{
       method:"POST",
       headers:{
         "Content-Type":"application/json"
@@ -298,7 +298,7 @@ export default function App()
     .catch(err=>console.error(err))
   }
  function trade(){
-  fetch(`http://127.0.0.1:8000/trade/${game_id}`,{
+  fetch(`https://mp-frontend-tfc6.onrender.com/trade/${game_id}`,{
       method:"POST",
       headers:{
         "Content-Type":"application/json"
@@ -317,7 +317,7 @@ export default function App()
 
  }
   function trade_decline(){
-  fetch(`http://127.0.0.1:8000/trade/${game_id}`,{
+  fetch(`https://mp-frontend-tfc6.onrender.com/trade/${game_id}`,{
       method:"POST",
       headers:{
         "Content-Type":"application/json"
@@ -344,7 +344,7 @@ export default function App()
       return;
     }
 
-    fetch(`http://127.0.0.1:8000/buy/${game_id}`,{
+    fetch(`https://mp-frontend-tfc6.onrender.com/buy/${game_id}`,{
       method:"POST",
       headers:{
         "Content-Type":"application/json"
@@ -364,7 +364,7 @@ export default function App()
   }
 
   function get_state(){
-    fetch(`http://127.0.0.1:8000/get_state/${game_id}`,{
+    fetch(`https://mp-frontend-tfc6.onrender.com/get_state/${game_id}`,{
       method:"GET",
       headers:{
         "Content-Type":"application/json"
@@ -390,7 +390,7 @@ export default function App()
     })
   }
   function fetch_state(){
-    fetch(`http://127.0.0.1:8000/get_state/${game_id}`,{
+    fetch(`https://mp-frontend-tfc6.onrender.com/get_state/${game_id}`,{
       method:"GET",
       headers:{
         "Content-Type":"application/json"
@@ -406,7 +406,7 @@ export default function App()
 
   
   function buy_house(){
-    fetch(`http://127.0.0.1:8000/get_house/${game_id}`,{
+    fetch(`https://mp-frontend-tfc6.onrender.com/get_house/${game_id}`,{
       method:"POST",
       headers:{
         "Content-Type":"application/json"
