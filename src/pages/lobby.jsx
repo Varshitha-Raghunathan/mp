@@ -48,6 +48,7 @@ setJoined(true);
     }
 
     function get_lobby(){
+      console.log("get_lobby is being called")
       fetch(`https://mp-backend-public-test.onrender.com/get_lobbies/${params.lobbyId}`,{
       method:"GET",
       headers:{
@@ -59,7 +60,9 @@ setJoined(true);
     .then(res=>res.json())
     .then(data=>{
       console.log("Response:",data)
+      console.log("players in lobby before",playersInLobby)
       setPlayersInLobby(data.players)
+      console.log("players in lobby after",playersInLobby)
     
 })  
     .catch(err=>console.error(err))
