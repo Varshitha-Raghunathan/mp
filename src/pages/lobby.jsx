@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 export default function Lobby(){
-  throw Error("lobby sucks")
+ // throw Error("lobby sucks")
   console.log("lobby componenet is being rendered")
     const [playerName,setPlayerName]=useState("")
     const [joined,setJoined]=useState(false)
