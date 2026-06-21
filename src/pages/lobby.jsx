@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 export default function Lobby(){
+  let navigate=useNavigate()
  // throw Error("lobby sucks")
   console.log("lobby componenet is being rendered")
     const [playerName,setPlayerName]=useState("")
@@ -85,7 +86,7 @@ export default function Lobby(){
     .then(res=>res.json())
     .then(data=>{
       console.log("Response:",data)
-      Navigate(`/game/${data.game_id}`)
+      navigate(`/game/${data.game_id}`)
     
       })  
     .catch(err=>console.error(err))
