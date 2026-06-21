@@ -18,6 +18,7 @@ export default function Lobby(){
 
     useEffect(()=>{
       if (!joined) return ;
+      console.log("am being called")
       get_lobby();
       const interval=setInterval(()=>{
         get_lobby();
@@ -42,7 +43,7 @@ export default function Lobby(){
       console.log("Response:",data)
     
 setJoined(true);
-get_lobby();})  
+})  
     .catch(err=>console.error(err))
     }
 
