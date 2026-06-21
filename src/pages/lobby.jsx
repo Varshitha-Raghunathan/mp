@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 export default function Lobby(){
+  console.log("lobby componenet is being rendered")
     const [playerName,setPlayerName]=useState("")
     const [joined,setJoined]=useState(false)
     const [playersInLobby,setPlayersInLobby]=useState([])
