@@ -75,20 +75,18 @@ export default function Lobby(){
     }
     function start_game(){
       fetch(`https://mp-backend-public-test.onrender.com/start_game/${params.lobbyId}`,{
-      method:"POST",
+      method:"GET",
       headers:{
         "Content-Type":"application/json"
       },
-       body:JSON.stringify({
-        players:playersInLobby
-      })
+      
       
     })
     .then(res=>res.json())
     .then(data=>{
       console.log("Response:",data)
     
-      setPlayersInLobby(data.players)})  
+      })  
     .catch(err=>console.error(err))
 
 
