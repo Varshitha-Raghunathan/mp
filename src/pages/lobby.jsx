@@ -79,12 +79,13 @@ export default function Lobby(){
       headers:{
         "Content-Type":"application/json"
       },
-      
+     
       
     })
     .then(res=>res.json())
     .then(data=>{
       console.log("Response:",data)
+      Navigate(`/game/${data.game_id}`)
     
       })  
     .catch(err=>console.error(err))
