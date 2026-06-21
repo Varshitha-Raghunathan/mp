@@ -15,10 +15,19 @@ export default function Lobby(){
             
         }
     },[])
+
+    useEffect(()=>{
+      if (!joined) return ;
+      get_lobby();
+      const interval=setInterval(()=>{
+        get_lobby();
+      },2000);
+      return () => clearInterval(interval)
+    },[joined]);
     
     
     function join_lobby(){
-        localStorage.setItem(`lobby_${params.lobbyId}_player`,"anna")
+        localStorage.setItem(`lobby_${params.lobbyId}_player`,playerName)
         fetch(`https://mp-backend-public-test.onrender.com/join_lobby/${params.lobbyId}`,{
       method:"POST",
       headers:{
