@@ -8,12 +8,15 @@ export default function Lobby(){
     let params= useParams();
 
     useEffect(()=>{
+      console.log("first use effect")
         const  name=localStorage.getItem(`lobby_${params.lobbyId}_player`)
         if (name){
             setPlayerName(name)
             setJoined(true)
             
         }
+        console.log(name)
+        console.log(jonied)
     },[])
 
     useEffect(()=>{
