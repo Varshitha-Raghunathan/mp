@@ -17,7 +17,7 @@ export default function Lobby(){
     },[])
 
     useEffect(()=>{
-      if (!joined) return ;
+      if (!joined) {console.log("am not true");return ;}
       console.log("am being called")
       get_lobby();
       const interval=setInterval(()=>{
@@ -42,7 +42,7 @@ export default function Lobby(){
     .then(data=>{
       console.log("Response:",data)
     
-setJoined(true);
+    setJoined(true);
 })  
     .catch(err=>console.error(err))
     }
