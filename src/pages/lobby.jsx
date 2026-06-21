@@ -49,6 +49,7 @@ get_lobby();})
     .then(res=>res.json())
     .then(data=>{
       console.log("Response:",data)
+      setPlayersInLobby(data.players)
     
 })  
     .catch(err=>console.error(err))
@@ -86,6 +87,7 @@ get_lobby();})
                 
               }
             />
+             <button onClick={join_lobby}>Join Lobby</button>
             
             </div>
         ) :
@@ -98,7 +100,7 @@ get_lobby();})
         </div>
         )
         }
-        <button onClick={join_lobby}>Join Lobby</button>
+       
         <h1>LOBBY {params.lobbyId}</h1> </div>);
 }
 
