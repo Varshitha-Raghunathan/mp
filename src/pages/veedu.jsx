@@ -7,7 +7,7 @@ const [inLobby,setInLobby]=useState(false)
 const [lobbyID,setLobbyID]=useState(0)
 let navigate=useNavigate()
 function createLobby(){
-  fetch("http://127.0.0.1:8000/create_lobbies",{
+  fetch("https://mp-backend-public-test.onrender.com/create_lobbies",{
       method:"GET",
       headers:{
         "Content-Type":"application/json"

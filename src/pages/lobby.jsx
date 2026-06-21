@@ -19,7 +19,7 @@ export default function Lobby(){
     
     function join_lobby(){
         localStorage.setItem(`lobby_${params.lobbyId}_player`,"anna")
-        fetch(`http://127.0.0.1:8000/join_lobby/${params.lobbyId}`,{
+        fetch(`https://mp-backend-public-test.onrender.com/join_lobby/${params.lobbyId}`,{
       method:"POST",
       headers:{
         "Content-Type":"application/json"
@@ -38,7 +38,7 @@ get_lobby();})
     }
 
     function get_lobby(){
-      fetch(`http://127.0.0.1:8000/get_lobbies/${params.lobbyId}`,{
+      fetch(`https://mp-backend-public-test.onrender.com/get_lobbies/${params.lobbyId}`,{
       method:"GET",
       headers:{
         "Content-Type":"application/json"
@@ -55,7 +55,7 @@ get_lobby();})
 
     }
     function start_game(){
-      fetch(`http://127.0.0.1:8000/start_game/${params.lobbyId}`,{
+      fetch(`https://mp-backend-public-test.onrender.com/start_game/${params.lobbyId}`,{
       method:"POST",
       headers:{
         "Content-Type":"application/json"
