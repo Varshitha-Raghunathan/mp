@@ -84,7 +84,7 @@ export default function Game()
   
   const [gameState,setGameState] = useState([])
   const [playerPositions,setPlayerPositions]=useState({})
-  const [gameStarted, setGameStarted] = useState(false)
+  const [gameStarted, setGameStarted] = useState(true)
   const[selectedTile,setSelectedTile] = useState(null)
   const [houses,setHouses] = useState({})
   const [inJail,setInJail]=useState(false)
@@ -391,18 +391,13 @@ export default function Game()
 
    return (
     <div className="app-container">
-   
-      <button onClick={createLobby}>CREATE LOBBY</button>
-      {!inLobby ?(
-        <div>Create a lobby </div>
-      ):(
         <div>GAME
 
       {!gameStarted ? (
         <div className="card">
           <h2 id="title">Enter Players</h2>
 
-          <div className="input-row">
+         <div className="input-row">
             <input
               type="text"
               value={currentName}
@@ -533,8 +528,8 @@ export default function Game()
         </div>
       )}
       </div>
-    )
-  }
+    
+  
 
     </div>
   );
