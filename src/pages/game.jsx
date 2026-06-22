@@ -130,7 +130,7 @@ export default function Game()
   
   useEffect(()=>{
     fetch(`https://mp-backend-public-test.onrender.com/get_state/${params.gameId}`)
-    .then(res=>res.json)
+    .then(res=>res.json())
     .then(data=>{
       console.log("Response",data)
       //setGameState(data.state)
