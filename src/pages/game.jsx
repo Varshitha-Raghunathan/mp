@@ -79,7 +79,7 @@ export default function Game()
   
   
 
- let paprams=useParams();
+ let params=useParams();
 
   
   
