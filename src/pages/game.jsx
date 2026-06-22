@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import "C:\Users\acer\Desktop\mp-draft\src\App.jsx"
+import "./App.css";
 
 /* ================= BOARD ================= */
 
