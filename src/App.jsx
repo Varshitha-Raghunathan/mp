@@ -1,6 +1,7 @@
 import {Routes,Route} from 'react-router-dom'
 import Home from "./pages/veedu.jsx"
 import Lobby from "./pages/lobby.jsx"
+import Game from "./pages/game.jsx"
 
 export default function App(){
     return (
