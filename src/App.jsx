@@ -7,6 +7,7 @@ export default function App(){
     <Routes>
         <Route path="/" element={<Home />} />
         <Route path ="/lobby/:lobbyId" element={<Lobby />} />
+        <Route path ="/game/:gameId" element={<Game />} />
         </Routes> );
         
 }
