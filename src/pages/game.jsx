@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import "./game.css";
+import { useParams } from "react-router-dom";
 
 /* ================= BOARD ================= */
 
@@ -78,7 +79,7 @@ export default function Game()
   
   
 
-
+ let paprams=useParams();
 
   
   
