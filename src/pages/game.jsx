@@ -142,7 +142,7 @@ export default function Game()
       })
 
       setPlayerPositions(initialPositions)
-    })
+    
      
     })
   },[])
