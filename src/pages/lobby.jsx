@@ -37,7 +37,7 @@ export default function Lobby(){
     useEffect(()=>{
       const interval= setInterval(()=>{
         fetch(`https://mp-backend-public-test.onrender.com/lobby_status/${params.lobbyId}`)
-        .then(res=res.json())
+        .then(res=>res.json())
         .then(data=>{
           if(data.started){
             navigate(`game/${data.game_id}`)
