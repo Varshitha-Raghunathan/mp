@@ -8,6 +8,7 @@ export default function Lobby(){
     const [playerName,setPlayerName]=useState("")
     const [joined,setJoined]=useState(false)
     const [playersInLobby,setPlayersInLobby]=useState([])
+    const [gameId,setGameId]=useState(0)
     let params= useParams();
     useEffect(()=>{
       console.log("players in lobby after updation",playersInLobby)
@@ -41,6 +42,7 @@ export default function Lobby(){
         .then(data=>{
           if(data.started){
             navigate(`https://mp-backend-public-test.onrender.com/game/${data.game_id}`)
+            setGameId(data.game_id)
           }
         })
       },1000);
@@ -102,7 +104,7 @@ export default function Lobby(){
     .then(res=>res.json())
     .then(data=>{
       console.log("Response:",data)
-      navigate(`https://mp-backend-public-test.onrender.com/game/${data.game_id}`)
+      navigate(`https://mp-backend-public-test.onrender.com/game/${gameId}`)
     
       })  
     .catch(err=>console.error(err))
