@@ -205,7 +205,7 @@ export default function Game()
   
 
   function rollDice(){
-    fetch(`https://mp-backend-public-test.onrender.com/ /turn/${game_id}`,{
+    fetch(`https://mp-backend-public-test.onrender.com/turn/${game_id}`,{
       method:"GET",
       headers:{
         "Content-Type":"application/json"
