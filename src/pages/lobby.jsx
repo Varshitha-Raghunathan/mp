@@ -11,7 +11,7 @@ export default function Lobby(){
     let params= useParams();
     useEffect(()=>{
       console.log("players in lobby after updation",playersInLobby)
-    },[playersInLobby])
+    },[playersInLobby]);
     useEffect(()=>{
       console.log("first use effect")
         const  name=localStorage.getItem(`lobby_${params.lobbyId}_player`)
