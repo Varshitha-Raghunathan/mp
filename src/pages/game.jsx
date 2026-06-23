@@ -240,7 +240,7 @@ export default function Game()
       alert("You are not in jail hence do not press the button")
       return;
     }
-    fetch(`https://mp-backend-public-test.onrender.com/ /jail_time_skip/${params.gameId}`,{
+    fetch(`https://mp-backend-public-test.onrender.com/jail_time_skip/${params.gameId}`,{
       method:"POST",
       headers:{
         "Content-Type":"application/json"
@@ -261,7 +261,7 @@ export default function Game()
       alert("You are not in jail hence do not press the button")
       return;
     }
-    fetch(`https://mp-backend-public-test.onrender.com/ /jail_time_pay/${params.gameId}`,{
+    fetch(`https://mp-backend-public-test.onrender.com/jail_time_pay/${params.gameId}`,{
       method:"POST",
       headers:{
         "Content-Type":"application/json"
@@ -277,7 +277,7 @@ export default function Game()
     .catch(err=>console.error(err))
   }
  function trade(){
-  fetch(`https://mp-backend-public-test.onrender.com/ /trade/${params.gameId}`,{
+  fetch(`https://mp-backend-public-test.onrender.com/trade/${params.gameId}`,{
       method:"POST",
       headers:{
         "Content-Type":"application/json"
@@ -296,7 +296,7 @@ export default function Game()
 
  }
   function trade_decline(){
-  fetch(`https://mp-backend-public-test.onrender.com/ /trade/${params.gameId}`,{
+  fetch(`https://mp-backend-public-test.onrender.com/trade/${params.gameId}`,{
       method:"POST",
       headers:{
         "Content-Type":"application/json"
@@ -323,7 +323,7 @@ export default function Game()
       return;
     }
 
-    fetch(`https://mp-backend-public-test.onrender.com/ /buy/${params.gameId}`,{
+    fetch(`https://mp-backend-public-test.onrender.com/buy/${params.gameId}`,{
       method:"POST",
       headers:{
         "Content-Type":"application/json"
@@ -343,7 +343,7 @@ export default function Game()
   }
 
   function get_state(){
-    fetch(`https://mp-backend-public-test.onrender.com/ /get_state/${params.gameId}`,{
+    fetch(`https://mp-backend-public-test.onrender.com/get_state/${params.gameId}`,{
       method:"GET",
       headers:{
         "Content-Type":"application/json"
@@ -369,7 +369,7 @@ export default function Game()
     })
   }
   function fetch_state(){
-    fetch(`https://mp-backend-public-test.onrender.com/ /get_state/${params.gameId}`,{
+    fetch(`https://mp-backend-public-test.onrender.com/get_state/${params.gameId}`,{
       method:"GET",
       headers:{
         "Content-Type":"application/json"
@@ -385,7 +385,7 @@ export default function Game()
 
   
   function buy_house(){
-    fetch(`https://mp-backend-public-test.onrender.com/ /get_house/${params.gameId}`,{
+    fetch(`https://mp-backend-public-test.onrender.com/get_house/${params.gameId}`,{
       method:"POST",
       headers:{
         "Content-Type":"application/json"
