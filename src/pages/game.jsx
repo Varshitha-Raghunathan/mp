@@ -133,7 +133,7 @@ export default function Game()
     .then(res=>res.json())
     .then(data=>{
       console.log("Response",data)
-      setGameState(data.state)
+      
       setPlayers(Object.keys(data.name))
       const initialPositions = {}
 
