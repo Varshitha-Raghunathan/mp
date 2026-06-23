@@ -102,7 +102,7 @@ export default function Lobby(){
     .then(res=>res.json())
     .then(data=>{
       console.log("Response:",data)
-      navigate(`/game/${data.game_id}`)
+      navigate(`https://mp-backend-public-test.onrender.com/game/${data.game_id}`)
     
       })  
     .catch(err=>console.error(err))
