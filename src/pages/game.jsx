@@ -135,13 +135,7 @@ export default function Game()
       console.log("Response",data)
       
       setPlayers(Object.keys(data))
-      const initialPositions = {}
-
-      Object.values(data.STATE).forEach(player=>{
-        initialPositions[player.id] = player.position
-      })
-
-      setPlayerPositions(initialPositions)
+     
     })
   },[])
   
