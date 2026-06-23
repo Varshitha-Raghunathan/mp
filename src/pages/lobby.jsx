@@ -41,7 +41,7 @@ export default function Lobby(){
         .then(res=>res.json())
         .then(data=>{
           if(data.started){
-            navigate(`https://mp-backend-public-test.onrender.com/game/${data.game_id}`)
+            navigate(`https://mp-backend-public-test.onrender.com/game/${gameId}`)
             setGameId(data.game_id)
           }
         })
@@ -104,7 +104,8 @@ export default function Lobby(){
     .then(res=>res.json())
     .then(data=>{
       console.log("Response:",data)
-      navigate(`https://mp-backend-public-test.onrender.com/game/${gameId}`)
+      navigate(`/game/${data.game_id}`)
+      setGameId(data.game_id)
     
       })  
     .catch(err=>console.error(err))
@@ -139,4 +140,3 @@ export default function Lobby(){
        
         <h1>LOBBY {params.lobbyId}</h1> </div>);
 }
-
