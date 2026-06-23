@@ -41,7 +41,7 @@ export default function Lobby(){
         .then(res=>res.json())
         .then(data=>{
           if(data.started){
-            navigate(`/game/${gameId}`)
+            navigate(`/game/${data.game_id}`)
             //setGameId(data.game_id)
           }
         })
