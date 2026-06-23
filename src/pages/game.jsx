@@ -134,7 +134,7 @@ export default function Game()
     .then(data=>{
       console.log("Response",data)
       
-      setPlayers(Object.keys(data.name))
+      setPlayers(Object.keys(data))
       const initialPositions = {}
 
       Object.values(data.STATE).forEach(player=>{
