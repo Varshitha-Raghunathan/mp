@@ -41,7 +41,7 @@ export default function Lobby(){
         .then(res=>res.json())
         .then(data=>{
           if(data.started){
-            navigate(`https://mp-backend-public-test.onrender.com/game/${gameId}`)
+            navigate(`/game/${gameId}`)
             //setGameId(data.game_id)
           }
         })
