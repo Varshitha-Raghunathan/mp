@@ -42,7 +42,7 @@ export default function Lobby(){
         .then(data=>{
           if(data.started){
             navigate(`https://mp-backend-public-test.onrender.com/game/${gameId}`)
-            setGameId(data.game_id)
+            //setGameId(data.game_id)
           }
         })
       },1000);
