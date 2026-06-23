@@ -134,8 +134,16 @@ export default function Game()
     .then(data=>{
       console.log("Response",data)
       setGameState(data.state)
+      setPlayers(Object.keys(data.name))
+      const initialPositions = {}
+
+      Object.values(data.STATE).forEach(player=>{
+        initialPositions[player.id] = player.position
+      })
+
+      setPlayerPositions(initialPositions)
     })
-  })
+  },[])
   
   useEffect(()=>{
     console.log("updated player positions",playerPositions)
