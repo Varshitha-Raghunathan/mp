@@ -9,7 +9,9 @@ export default function Lobby(){
     const [joined,setJoined]=useState(false)
     const [playersInLobby,setPlayersInLobby]=useState([])
     let params= useParams();
-
+    useEffect(()=>{
+      console.log("players in lobby after updation",playersInLobby)
+    },[playersInLobby])
     useEffect(()=>{
       console.log("first use effect")
         const  name=localStorage.getItem(`lobby_${params.lobbyId}_player`)
@@ -31,6 +33,20 @@ export default function Lobby(){
       },2000);
       return () => clearInterval(interval)
     },[joined]);
+
+    useEffect(()=>{
+      const interval= setInterval(()=>{
+        fetch(`https://mp-backend-public-test.onrender.com/lobby_status/${params.lobbyId}`)
+        .then(res=res.json())
+        .then(data=>{
+          if(data.started){
+            navigate(`game/${data.game_id}`)
+          }
+        })
+      },1000);
+      return ()=>clearInterval(interval)
+
+    },[]);
     
     
     function join_lobby(){
