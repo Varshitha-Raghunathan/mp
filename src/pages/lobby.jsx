@@ -13,12 +13,14 @@ export default function Lobby(){
     useEffect(()=>{
       console.log("players in lobby after updation",playersInLobby)
     },[playersInLobby]);
+
     useEffect(()=>{
       console.log("first use effect")
         const  name=localStorage.getItem(`lobby_${params.lobbyId}_player`)
         if (name){
-            setPlayerName(name)
+            setPlayerName("name has been set",name)
             setJoined(true)
+            console.log(localStorage.getItem(`lobby_${params.lobbyId}_player`))
             
         }
         console.log(name)
