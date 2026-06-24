@@ -18,9 +18,9 @@ export default function Lobby(){
       console.log("first use effect")
         const  name=localStorage.getItem(`lobby_${params.lobbyId}_player`)
         if (name){
-            setPlayerName("name has been set",name)
+            setPlayerName(name)
             setJoined(true)
-            console.log(localStorage.getItem(`lobby_${params.lobbyId}_player`))
+            console.log(localStorage.getItem("name has been set",`lobby_${params.lobbyId}_player`))
             
         }
         console.log(name)
