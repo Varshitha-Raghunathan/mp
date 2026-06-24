@@ -126,6 +126,7 @@ export default function Game()
   const [currentNameG,setCurrentNameG]=useState(null)
   const [tradeMode,setTradeMode] = useState(false)
   const [log,setLog]=useState("")
+  const playerName=localStorage.getItem(`lobby_${params.lobbyId}_player`)
 
   
   useEffect(()=>{
@@ -146,6 +147,10 @@ export default function Game()
      
     })
   },[])
+
+  useEffect(()=>{
+    console.log("local storage stored player name as",playerName)
+  },[playerName])
   
   useEffect(()=>{
     console.log("updated player positions",playerPositions)
