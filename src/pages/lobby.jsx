@@ -58,6 +58,10 @@ export default function Lobby(){
     
     function join_lobby(){
         localStorage.setItem(`lobby_${params.lobbyId}_player`,playerName)
+        console.log(
+  "Stored lobby player:",
+  localStorage.getItem(`lobby_${params.lobbyId}_player`)
+);
         fetch(`https://mp-backend-public-test.onrender.com/join_lobby/${params.lobbyId}`,{
       method:"POST",
       headers:{
