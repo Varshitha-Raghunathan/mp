@@ -74,7 +74,7 @@ export default function Game()
   const [buyDecision,setBuyDecision]=useState(false)
   const [curretPlayerID,setCurrentPlayerID]=useState(0)
   const [lobbyID,setLobbyID]=useState(0)
-  const [playerName,setPlayerName]=useState("")
+  
   const [inLobby,setInLobby]=useState(false)
   
   
