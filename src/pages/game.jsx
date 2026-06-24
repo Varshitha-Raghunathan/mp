@@ -127,6 +127,7 @@ export default function Game()
   const [tradeMode,setTradeMode] = useState(false)
   const [log,setLog]=useState("")
   const playerId=localStorage.getItem("our_player_id")
+  let myTurn=True
 
   
   useEffect(()=>{
@@ -150,8 +151,8 @@ export default function Game()
 
   useEffect(()=>{
     console.log(`${params.gameId}`)
-    console.log("local storage stored player name as",playerName)
-  },[playerName])
+    console.log("local storage stored player name as",playerId)
+  },[playerId])
   
   useEffect(()=>{
     console.log("updated player positions",playerPositions)
@@ -243,6 +244,14 @@ export default function Game()
     })
     .catch(err=>console.error(err))
     fetch_state()
+    get_player()
+    if (curretPlayerID!==playerId){
+      myTurn=false
+    }
+    else{
+      myTurn=True
+    }
+
   }
 
   function jail_skip(){
@@ -402,7 +411,7 @@ export default function Game()
     .then(res=>res.json())
     .then(data=>{
       console.log("Response:",data)
-      setCurrentName(data.cn)
+      setCurrentPlayerID(data.cn)
     })
     .catch(err=>console.error(err))
   }
@@ -480,7 +489,7 @@ export default function Game()
             </div>
         
 
-          <button onClick={rollDice}>ROLL DICE</button>
+          <button disabled={!myTurn} onClick={rollDice}>ROLL DICE</button>
           <button onClick={buy}>BUY</button>
           <button onClick={get_state}>STATE</button>
           <button onClick={buy_house}>BUY HOUSE</button>
