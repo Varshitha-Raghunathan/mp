@@ -129,7 +129,9 @@ export default function Game()
   const playerId=localStorage.getItem("our_player_id")
   let myTurn=true
 
-  
+  useEffect(()=>{
+    console.log(myTurn)
+  })
   useEffect(()=>{
     fetch(`https://mp-backend-public-test.onrender.com/get_state/${params.gameId}`)
     .then(res=>res.json())
@@ -212,12 +214,14 @@ export default function Game()
   
 
   function rollDice(){
+    console.log("the player id being sent to turn is",playerId)
     fetch(`https://mp-backend-public-test.onrender.com/turn/${params.gameId}`,{
       method:"POST",
       headers:{
         "Content-Type":"application/json"
       },
       body:JSON.stringify({
+
         player_id:playerId
 
       }),
