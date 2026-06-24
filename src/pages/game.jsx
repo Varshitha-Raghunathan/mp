@@ -127,7 +127,7 @@ export default function Game()
   const [tradeMode,setTradeMode] = useState(false)
   const [log,setLog]=useState("")
   const playerId=localStorage.getItem("our_player_id")
-  let myTurn=True
+  let myTurn=true
 
   
   useEffect(()=>{
