@@ -149,6 +149,7 @@ export default function Game()
   },[])
 
   useEffect(()=>{
+    console.log(`${params.gameId}`)
     console.log("local storage stored player name as",playerName)
   },[playerName])
   
