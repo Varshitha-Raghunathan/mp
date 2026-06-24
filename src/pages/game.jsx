@@ -212,10 +212,14 @@ export default function Game()
 
   function rollDice(){
     fetch(`https://mp-backend-public-test.onrender.com/turn/${params.gameId}`,{
-      method:"GET",
+      method:"POST",
       headers:{
         "Content-Type":"application/json"
       },
+      body:JSON.stringify({
+        player_name:playerName
+
+      }),
     })
     .then(res=>res.json())
     .then(data=>{
@@ -385,6 +389,20 @@ export default function Game()
     .then(data=>{
       console.log("Response:",data)
       setGameState(data)
+    })
+    .catch(err=>console.error(err))
+  }
+   function get_player(){
+    fetch(`https://mp-backend-public-test.onrender.com/current_player/${params.gameId}`,{
+      method:"GET",
+      headers:{
+        "Content-Type":"application/json"
+      },
+    })
+    .then(res=>res.json())
+    .then(data=>{
+      console.log("Response:",data)
+      setCurrentName(data.cn)
     })
     .catch(err=>console.error(err))
   }
