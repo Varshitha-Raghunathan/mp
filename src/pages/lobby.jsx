@@ -115,6 +115,13 @@ export default function Lobby(){
     .then(res=>res.json())
     .then(data=>{
       console.log("Response:",data)
+      const myName=localStorage.getItem(`lobby_${paarams.lobbyId}_player`)
+      const myPlayer = data.STATE.find(
+        player => player.name === myName
+      );
+      if (myPlayer)
+      localStorage.setItem("our_player_id",myPlayer.id)
+    console.log("Stored player id",myPlayer.id)
       navigate(`/game/${data.game_id}`)
       setGameId(data.game_id)
     

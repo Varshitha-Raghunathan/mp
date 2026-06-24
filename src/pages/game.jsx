@@ -126,7 +126,7 @@ export default function Game()
   const [currentNameG,setCurrentNameG]=useState(null)
   const [tradeMode,setTradeMode] = useState(false)
   const [log,setLog]=useState("")
-  const playerName=localStorage.getItem("our_player")
+  const playerId=localStorage.getItem("our_player_id")
 
   
   useEffect(()=>{
@@ -217,7 +217,7 @@ export default function Game()
         "Content-Type":"application/json"
       },
       body:JSON.stringify({
-        player_name:playerName
+        player_id:playerId
 
       }),
     })
