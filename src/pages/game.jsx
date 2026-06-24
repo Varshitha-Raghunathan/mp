@@ -126,7 +126,7 @@ export default function Game()
   const [currentNameG,setCurrentNameG]=useState(null)
   const [tradeMode,setTradeMode] = useState(false)
   const [log,setLog]=useState("")
-  const playerName=localStorage.getItem(`lobby_${params.lobbyId}_player`)
+  const playerName=localStorage.getItem(`game_${params.gameId}_player`)
 
   
   useEffect(()=>{
