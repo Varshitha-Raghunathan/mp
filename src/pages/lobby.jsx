@@ -76,6 +76,8 @@ export default function Lobby(){
       console.log("Response:",data)
     
     setJoined(true);
+    localStorage.setItem("our_player",playerName)
+    console.log("this browser's player",localStorage.getItem("our_player"))
 })  
     .catch(err=>console.error(err))
     }
