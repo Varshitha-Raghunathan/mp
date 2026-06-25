@@ -46,7 +46,7 @@ export default function Lobby(){
           if(data.started){
             console.log("game id is",data.game_id)
             fetch(`https://mp-backend-public-test.onrender.com/get_state/${data.game_id}`)
-            .then(res=>res.join())
+            .then(res=>res.json())
             .then(stateData=>{
               const players=Object.values(stateData)
               const myPlayer = stateData.find(
