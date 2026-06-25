@@ -50,12 +50,13 @@ export default function Lobby(){
               const myPlayer = stateData.find(
              player => player.name === myName
               );
-            if (myPlayer)
+            if (myPlayer){
             localStorage.setItem("our_player_id",myPlayer.id)
-            console.log("Stored player id",myPlayer.id)
-            navigate(`/game/${data.game_id}`)
+            console.log("Stored player id",myPlayer.id)}
+            
 
             })
+            navigate(`/game/${data.game_id}`)
             
             
             //setGameId(data.game_id)
