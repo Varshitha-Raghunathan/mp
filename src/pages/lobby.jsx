@@ -39,11 +39,13 @@ export default function Lobby(){
 
     useEffect(()=>{
       const interval= setInterval(()=>{
+        console.log("am being called lobby status")
         fetch(`https://mp-backend-public-test.onrender.com/lobby_status/${params.lobbyId}`)
         .then(res=>res.json())
         .then(data=>{
           if(data.started){
-            fetch(`https://mp-backend-public-test.onrender.com/get_state/${data.game_ii}`)
+            console.log("game id is",data.game_id)
+            fetch(`https://mp-backend-public-test.onrender.com/get_state/${data.game_id}`)
             .then(res=>res.join())
             .then(stateData=>{
               const players=Object.values(stateData)
@@ -56,6 +58,7 @@ export default function Lobby(){
             
 
             })
+            console.log("NAVIGATING")
             navigate(`/game/${data.game_id}`)
             
             
