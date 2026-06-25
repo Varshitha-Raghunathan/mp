@@ -43,7 +43,7 @@ export default function Lobby(){
         .then(res=>res.json())
         .then(data=>{
           if(data.started){
-            fetch(`https://mp-backend-public-test.onrender.com/get_state/${params.gameId}`)
+            fetch(`https://mp-backend-public-test.onrender.com/get_state/${data.game_ii}`)
             .then(res=>res.join())
             .then(stateData=>{
               const players=Object.values(stateData)
