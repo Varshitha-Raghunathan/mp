@@ -49,7 +49,7 @@ export default function Lobby(){
             .then(res=>res.json())
             .then(stateData=>{
               const players=Object.values(stateData)
-              const myPlayer = stateData.find(
+              const myPlayer = players.find(
              player => player.name === myName
               );
             if (myPlayer){
