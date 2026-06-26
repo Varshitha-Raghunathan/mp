@@ -50,7 +50,7 @@ export default function Lobby(){
             .then(stateData=>{
               const players=Object.values(stateData)
               const myPlayer = players.find(
-             player => player.name === myName
+             player => player.name === playerName
               );
             if (myPlayer){
             localStorage.setItem("our_player_id",myPlayer.id)
