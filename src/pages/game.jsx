@@ -272,7 +272,7 @@ export default function Game()
       setCurrentPlayerID(data.player_id)
       setDiceValue(data.no)
       setCurrentNameG(data.name)
-      setLoggggg(data.log)
+      setLoggggg(data.action)
       console.log("after the log set",loggggg)
 
       //const position = data.current_position
