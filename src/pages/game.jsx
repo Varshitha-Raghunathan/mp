@@ -77,6 +77,8 @@ export default function Game()
   
   const [inLobby,setInLobby]=useState(false)
   const [display,setDisplay]=useState("")
+  const [no,setNo]=useState(0)
+  const [v,setV]=useState("")
   
   
 
@@ -193,6 +195,39 @@ export default function Game()
       return ()=>clearInterval(interval)
 
     },[loggggg]);
+
+      useEffect(()=>{
+    
+      const interval= setInterval(()=>{
+        fetch_cp()
+        console.log("v",v)
+        //console.log("nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn am log")
+
+        setV(v)
+        
+        
+           
+      },1000);
+      return ()=>clearInterval(interval)
+
+    },[v]);
+
+
+     useEffect(()=>{
+    
+      const interval= setInterval(()=>{
+        fetch_no()
+        console.log("no",no)
+        //console.log("nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn am log")
+
+        setNo(no)
+        
+        
+           
+      },1000);
+      return ()=>clearInterval(interval)
+
+    },[no]);
   
   /*useEffect(()=>{
     console.log("updated player positions",playerPositions)
@@ -470,6 +505,34 @@ export default function Game()
     })
     .catch(err=>console.error(err))
   }
+  function fetch_cp(){
+    fetch(`https://mp-backend-public-test.onrender.com/get_cp/${params.gameId}`,{
+      method:"GET",
+      headers:{
+        "Content-Type":"application/json"
+      },
+    })
+    .then(res=>res.json())
+    .then(data=>{
+      console.log("Response:",data)
+      setV(data.cp)
+    })
+    .catch(err=>console.error(err))
+  }
+  function fetch_no(){
+    fetch(`https://mp-backend-public-test.onrender.com/get_die/${params.gameId}`,{
+      method:"GET",
+      headers:{
+        "Content-Type":"application/json"
+      },
+    })
+    .then(res=>res.json())
+    .then(data=>{
+      console.log("Response:",data)
+      setNo(data.no)
+    })
+    .catch(err=>console.error(err))
+  }
 
   function fetch_log(){
     fetch(`https://mp-backend-public-test.onrender.com/get_log/${params.gameId}`,{
@@ -564,7 +627,7 @@ export default function Game()
             houses={houses}
           />
           <div className="board-center">
-            {currentNameG} rolled {diceValue}
+            {v} rolled {no}
 
                 {inJail && (<> <button onClick={jail_skip}>SKIP TURN</button>
           <button onClick={jail_pay}>PAY UP</button></>)}
