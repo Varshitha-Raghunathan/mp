@@ -278,7 +278,7 @@ export default function Game()
       console.log("after the log set",loggggg)
 
       //const position = data.current_position
-
+0
       // ✅ update ONLY that player
       //setPlayerPositions(prev => ({
        // ...prev,
@@ -424,7 +424,7 @@ export default function Game()
     .then(data=>{
       console.log("Response after buying a property",data)
       setBuyDecision(false)
-     // setLoggggg(data)
+     setLoggggg(data)
       //console.log("lonnnnnnnnnnnnnnnnnnn",data)
     })
     .catch(err=>console.error(err))
