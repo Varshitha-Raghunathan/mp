@@ -180,7 +180,7 @@ export default function Game()
 
   useEffect(()=>{
       const interval= setInterval(()=>{
-        console.log("nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn am log")
+        //console.log("nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn am log")
         setDisplay(log)
         console.log("dsabjzcmnm",display)
         
