@@ -238,13 +238,14 @@ export default function Game()
       setCurrentNameG(data.name)
       setLog(data.log)
 
-      const position = data.current_position
+      //const position = data.current_position
 
       // ✅ update ONLY that player
-      setPlayerPositions(prev => ({
-        ...prev,
-        [data.player_id]: position
-      }))
+      //setPlayerPositions(prev => ({
+       // ...prev,
+        //[data.player_id]: position
+      //}))
+      updatePlayer()
     })
     .catch(err=>console.error(err))
     fetch_state()
@@ -257,6 +258,31 @@ export default function Game()
     }
 
   }
+  function updatePlayer(){
+
+
+    fetch(`https://mp-backend-public-test.onrender.com/get_state/${params.gameId}`,{
+      method:"GET",
+      headers:{
+        "Content-Type":"application/json"
+      },
+    })
+    .then(res=>res.json())
+    .then(data=>{
+      console.log("(update player is being called)Response for ",data)
+      const positions={}
+      Object.values(data).forEach(player=>{
+        positions[player.id]=player.position
+
+      })
+      setPlayerPositions(positions)
+      
+    })
+    .catch(err=>console.error(err))
+    console.log("updating the position of everyone on board based on the state",)
+    
+  }
+
 
   function jail_skip(){
     if (inJail===false){
