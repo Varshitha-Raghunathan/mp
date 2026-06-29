@@ -76,6 +76,7 @@ export default function Game()
   const [lobbyID,setLobbyID]=useState(0)
   
   const [inLobby,setInLobby]=useState(false)
+  const [display,setDisplay]=useState("")
   
   
 
@@ -132,6 +133,8 @@ export default function Game()
   useEffect(()=>{
     console.log(myTurn)
   })
+
+  //Initial position
   useEffect(()=>{
     fetch(`https://mp-backend-public-test.onrender.com/get_state/${params.gameId}`)
     .then(res=>res.json())
@@ -152,24 +155,7 @@ export default function Game()
   },[])
 
 
-  useEffect(()=>{
-    fetch(`https://mp-backend-public-test.onrender.com/get_state/${params.gameId}`)
-    .then(res=>res.json())
-    .then(data=>{
-      console.log("Response",data)
-      
-      setPlayers(Object.keys(data))
-        const initialPositions = {}
-
-      Object.values(data).forEach(player=>{
-        initialPositions[player.id] = player.position
-      })
-
-      setPlayerPositions(initialPositions)
-    
-     
-    })
-  },[])
+//local storage
 
   useEffect(()=>{
     console.log(`${params.gameId}`)
@@ -179,10 +165,23 @@ export default function Game()
 
 
 
-  useEffect(()=>{
+
+//
+    useEffect(()=>{
       const interval= setInterval(()=>{
-        console.log("am being called lobby status")
+        //console.log("am being called lobby status")
         updatePlayer();
+        
+           
+      },1000);
+      return ()=>clearInterval(interval)
+
+    },[]);
+
+    useEffect(()=>{
+      const interval= setInterval(()=>{
+        console.log("am log")
+        setDisplay(log)
         
            
       },1000);
@@ -420,7 +419,7 @@ export default function Game()
       console.log("Response after buying a property",data)
       setBuyDecision(false)
       setLog(data)
-      console.log("lonnnnnnnnnnnnnnnnnnn",log)
+      console.log("lonnnnnnnnnnnnnnnnnnn",data)
     })
     .catch(err=>console.error(err))
   }
@@ -548,7 +547,7 @@ export default function Game()
 
                 {inJail && (<> <button onClick={jail_skip}>SKIP TURN</button>
           <button onClick={jail_pay}>PAY UP</button></>)}
-          <div className="log">{log}</div>
+          <div className="log">{display}</div>
             
             </div>
         
