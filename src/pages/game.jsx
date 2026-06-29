@@ -167,7 +167,7 @@ export default function Game()
 
 
 //
-    useEffect(()=>{
+  useEffect(()=>{
       const interval= setInterval(()=>{
         //console.log("am being called lobby status")
         updatePlayer();
@@ -178,7 +178,7 @@ export default function Game()
 
     },[]);
 
-    useEffect(()=>{
+  useEffect(()=>{
       const interval= setInterval(()=>{
         console.log("nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn am log")
         setDisplay(log)
