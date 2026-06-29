@@ -304,7 +304,7 @@ export default function Game()
     })
     .then(res=>res.json())
     .then(data=>{
-      console.log("(update player is being called)Response for ",data)
+    //  console.log("(update player is being called)Response for ",data)
       const positions={}
       Object.values(data).forEach(player=>{
         positions[player.id]=player.position
@@ -314,7 +314,7 @@ export default function Game()
       
     })
     .catch(err=>console.error(err))
-    console.log("updating the position of everyone on board based on the state",)
+    //console.log("updating the position of everyone on board based on the state",)
     
   }
 
