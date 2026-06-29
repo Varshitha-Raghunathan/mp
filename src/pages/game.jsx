@@ -126,7 +126,7 @@ export default function Game()
   const [diceValue,setDiceValue]=useState(0)
   const [currentNameG,setCurrentNameG]=useState(null)
   const [tradeMode,setTradeMode] = useState(false)
-  const [log,setLog]=useState("")
+  const [loggggg,setLoggggg]=useState("")
   const playerId=localStorage.getItem("our_player_id")
   let myTurn=true
 
@@ -179,8 +179,10 @@ export default function Game()
     },[]);
 
   useEffect(()=>{
+    console.log("loggggg",loggggg)
       const interval= setInterval(()=>{
         //console.log("nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn am log")
+
         setDisplay(log)
         console.log("dsabjzcmnm",display)
         
@@ -270,8 +272,8 @@ export default function Game()
       setCurrentPlayerID(data.player_id)
       setDiceValue(data.no)
       setCurrentNameG(data.name)
-      setLog(data.log)
-      console.log("after the log set",log)
+      setLoggggg(data.log)
+      console.log("after the log set",loggggg)
 
       //const position = data.current_position
 
