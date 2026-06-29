@@ -191,7 +191,7 @@ export default function Game()
       },1000);
       return ()=>clearInterval(interval)
 
-    },[]);
+    },[loggggg]);
   
   /*useEffect(()=>{
     console.log("updated player positions",playerPositions)
