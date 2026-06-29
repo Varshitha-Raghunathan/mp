@@ -131,7 +131,7 @@ export default function Game()
   let myTurn=true
 
   useEffect(()=>{
-    console.log(myTurn)
+   // console.log(myTurn)
   })
 
   //Initial position
@@ -157,10 +157,10 @@ export default function Game()
 
 //local storage
 
-  useEffect(()=>{
+ /* useEffect(()=>{
     console.log(`${params.gameId}`)
     console.log("local storage stored player name as",playerId)
-  },[playerId])
+  },[playerId])*/
 
 
 
@@ -190,7 +190,7 @@ export default function Game()
 
     },[]);
   
-  useEffect(()=>{
+  /*useEffect(()=>{
     console.log("updated player positions",playerPositions)
   },[playerPositions])
   useEffect(()=>{
@@ -237,7 +237,7 @@ export default function Game()
       ...prev,
       player2_id:selectedPlayer2?.id
    }))},[selectedPlayer2])
-
+*/
 
    
 
