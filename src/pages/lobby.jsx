@@ -35,7 +35,7 @@ export default function Lobby(){
         get_lobby();
       },2000);
       return () => clearInterval(interval)
-    },[joined]);
+    },[joined])
 
     useEffect(()=>{
       const interval= setInterval(()=>{
@@ -50,12 +50,12 @@ export default function Lobby(){
             const res=await fetch(`https://mp-backend-public-test.onrender.com/get_state/${data.game_id}`);
             const stateData=await res.json()
             
-            console.log(playerName)
+            console.log(localStorage.getItem("our_player"))
 
             const players=Object.values(stateData)
 
             const myPlayer = players.find(
-             player => player.name === playerName
+             player => player.name === localStorage.getItem("our_player")
               );
 
             if (myPlayer){
