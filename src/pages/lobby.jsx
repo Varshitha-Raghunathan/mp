@@ -42,31 +42,39 @@ export default function Lobby(){
         console.log("am being called lobby status")
         fetch(`https://mp-backend-public-test.onrender.com/lobby_status/${params.lobbyId}`)
         .then(res=>res.json())
-        .then(data=>{
+        .then(async data=>{
           if(data.started){
+
+
             console.log("game id is",data.game_id)
-            fetch(`https://mp-backend-public-test.onrender.com/get_state/${data.game_id}`)
-            .then(res=>res.json())
-            .then(stateData=>{
-              console.log(playerName)
-              const players=Object.values(stateData)
-              const myPlayer = players.find(
+            const res=await fetch(`https://mp-backend-public-test.onrender.com/get_state/${data.game_id}`);
+            const stateData=await res.json()
+            
+            console.log(playerName)
+
+            const players=Object.values(stateData)
+
+            const myPlayer = players.find(
              player => player.name === playerName
               );
+
             if (myPlayer){
             localStorage.setItem("our_player_id",myPlayer.id)
             console.log("am making this long so i can notice thisStored player id",myPlayer.id)}
+
+
+
             console.log("is there a player id stored",localStorage.getItem("our_player_id"))
             console.log("NAVIGATING")
             navigate(`/game/${data.game_id}`)
 
-            })
+            }
             
             
             
             //setGameId(data.game_id)
-          }
-        })
+          })
+        
       },1000);
       return ()=>clearInterval(interval)
 
