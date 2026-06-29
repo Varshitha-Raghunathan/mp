@@ -179,12 +179,13 @@ export default function Game()
     },[]);
 
   useEffect(()=>{
-    console.log("loggggg",loggggg)
+    
       const interval= setInterval(()=>{
+        console.log("loggggg",loggggg)
         //console.log("nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn am log")
 
-        setDisplay(loggggg)
-        console.log("dsabjzcmnm",display)
+        //setDisplay(loggggg)
+        //console.log("dsabjzcmnm",display)
         
            
       },1000);
