@@ -185,7 +185,7 @@ export default function Game()
         //console.log("nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn am log")
 
         //setDisplay(loggggg)
-        //console.log("dsabjzcmnm",display)
+        
         
            
       },1000);
