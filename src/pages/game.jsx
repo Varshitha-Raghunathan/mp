@@ -182,6 +182,7 @@ export default function Game()
       const interval= setInterval(()=>{
         console.log("nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn am log")
         setDisplay(log)
+        console.log("dsabjzcmnm",display)
         
            
       },1000);
