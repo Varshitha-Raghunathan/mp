@@ -181,6 +181,7 @@ export default function Game()
   useEffect(()=>{
     
       const interval= setInterval(()=>{
+        fetch_log()
         console.log("loggggg",loggggg)
         //console.log("nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn am log")
 
@@ -423,8 +424,8 @@ export default function Game()
     .then(data=>{
       console.log("Response after buying a property",data)
       setBuyDecision(false)
-      setLoggggg(data)
-      console.log("lonnnnnnnnnnnnnnnnnnn",data)
+     // setLoggggg(data)
+      //console.log("lonnnnnnnnnnnnnnnnnnn",data)
     })
     .catch(err=>console.error(err))
   }
@@ -466,6 +467,21 @@ export default function Game()
     .then(data=>{
       console.log("Response:",data)
       setGameState(data)
+    })
+    .catch(err=>console.error(err))
+  }
+
+  function fetch_log(){
+    fetch(`https://mp-backend-public-test.onrender.com/get_log/${params.gameId}`,{
+      method:"GET",
+      headers:{
+        "Content-Type":"application/json"
+      },
+    })
+    .then(res=>res.json())
+    .then(data=>{
+      console.log("Response:",data)
+      setLoggggg(data.log)
     })
     .catch(err=>console.error(err))
   }
