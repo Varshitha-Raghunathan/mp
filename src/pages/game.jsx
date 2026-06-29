@@ -422,7 +422,7 @@ export default function Game()
     .then(data=>{
       console.log("Response after buying a property",data)
       setBuyDecision(false)
-      setLog(data)
+      setLoggggg(data)
       console.log("lonnnnnnnnnnnnnnnnnnn",data)
     })
     .catch(err=>console.error(err))
