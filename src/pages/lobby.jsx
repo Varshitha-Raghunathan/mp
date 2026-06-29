@@ -54,10 +54,11 @@ export default function Lobby(){
               );
             if (myPlayer){
             localStorage.setItem("our_player_id",myPlayer.id)
-            console.log("Stored player id",myPlayer.id)}
+            console.log("am making this long so i can notice thisStored player id",myPlayer.id)}
             
 
             })
+            console.log("is there a player id stored",localStorage.getItem("our_player_id"))
             console.log("NAVIGATING")
             navigate(`/game/${data.game_id}`)
             
