@@ -420,7 +420,7 @@ export default function Game()
       console.log("Response after buying a property",data)
       setBuyDecision(false)
       setLog(data)
-      console.log("lonnnnnnnnnnnnnnnnnnn,log)
+      console.log("lonnnnnnnnnnnnnnnnnnn",log)
     })
     .catch(err=>console.error(err))
   }
