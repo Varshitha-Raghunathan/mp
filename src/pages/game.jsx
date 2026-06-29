@@ -151,10 +151,44 @@ export default function Game()
     })
   },[])
 
+
+  useEffect(()=>{
+    fetch(`https://mp-backend-public-test.onrender.com/get_state/${params.gameId}`)
+    .then(res=>res.json())
+    .then(data=>{
+      console.log("Response",data)
+      
+      setPlayers(Object.keys(data))
+        const initialPositions = {}
+
+      Object.values(data).forEach(player=>{
+        initialPositions[player.id] = player.position
+      })
+
+      setPlayerPositions(initialPositions)
+    
+     
+    })
+  },[])
+
   useEffect(()=>{
     console.log(`${params.gameId}`)
     console.log("local storage stored player name as",playerId)
   },[playerId])
+
+
+
+
+  useEffect(()=>{
+      const interval= setInterval(()=>{
+        console.log("am being called lobby status")
+        updatePlayer();
+        
+           
+      },1000);
+      return ()=>clearInterval(interval)
+
+    },[]);
   
   useEffect(()=>{
     console.log("updated player positions",playerPositions)
